@@ -1,0 +1,33 @@
+name: Stats
+
+on: #cuando se lansa la git hub action
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 'pypy3.13'
+          
+      - name: Run script 
+        run: python ./stats.py
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: update stats
+          commit_user_name: inge_daniel
+          commit_user_email: juan2248438@correo.uis.edu.co
+          commit_author: inge_dan
+    
