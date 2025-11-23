@@ -27,7 +27,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: update stats
-          commit_user_name: inge_daniel
+          commit_user_name: Daniel
           commit_user_email: juan2248438@correo.uis.edu.co
-          commit_author: inge_dan
     
