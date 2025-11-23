@@ -1,8 +1,9 @@
 name: Stats
 
 on: #cuando se lansa la git hub action
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'
+    
 
 jobs:
   build:
